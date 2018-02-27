@@ -1,0 +1,118 @@
+html,
+body {
+    min-width: 100%;
+    min-height: 100%;
+}
+body {
+    background: #34495e;
+}
+.dialer {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #495c6e;
+}
+
+.phone-number {
+    background: #222e3c;
+    height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 10px;
+    display: flex;
+    text-align: center;
+}
+
+.phone-number .input {
+    background: transparent;
+    color: #fff;
+    border: none;
+    margin: 0 auto;
+    font-size: 40px;
+    display: block;
+}
+button {
+    width: 122px;
+    height: 35px;
+    display: block;
+    margin: 0 auto;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button.dial {
+    background: #27ae60;
+}
+button.hangup {
+    background: #da3a29;
+}
+
+.dial-container {
+    background: #34495e;
+    height: 200px;
+    display: flex;
+}
+.dial-container button {
+    margin-top: 30px;
+}
+
+.phone-timer {
+    color: #fff;
+}
+
+.deleteNumber .icon {
+    cursor: pointer;
+    fill: #fff;
+}
+
+.numbers-container {
+    background: #2a3a4b;
+}
+.nr-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.nr-row div {
+    flex: 1 1 auto;
+    color: white;
+    border: 1px solid #495c6e;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 100px;
+    cursor: pointer;
+}
+
+.nr-row div.pressed {
+    background: #222e3c;
+}
+.letterSpace {
+    letter-spacing: 5px;
+}
+
+.last-phones-modal {
+    max-height: calc(100% - 100px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2a3a4b;
+    border: 2px solid #495c6e;
+    border-radius: 3px;
+    padding: 40px;
+    color: #fff;
+    font-size: 14px;
+    min-width: 300px;
+}
+
+.last-phones-modal .totalNo {
+    font-size: 16px;
+}
+.last-phones-modal ul {
+    list-style: none;
+}
