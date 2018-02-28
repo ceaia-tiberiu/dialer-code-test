@@ -7,7 +7,7 @@ top 3 most calls placed in order by count
 
 ## Getting Started
 
-Clone the git repository `https://github.com/ceaia-tiberiu/dialer-code-test.git`
+You will need Node.js and npm installed for this to work
 
 ### Installing
 
