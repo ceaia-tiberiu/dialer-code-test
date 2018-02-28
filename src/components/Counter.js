@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 
+/**
+ * Counts the total number of seconds when dialing
+ */
 class Counter extends Component {
     constructor(props) {
         super(props);
@@ -31,5 +35,9 @@ class Counter extends Component {
         );
     }
 }
+
+Counter.propTypes = {
+    counterDone: propTypes.func.isRequired,
+};
 
 export default Counter;

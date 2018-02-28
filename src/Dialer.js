@@ -22,16 +22,29 @@ class Dialer extends Component {
         this.handleCloseModal = this.handleCloseModal.bind(this);
         this.handleDeleteNumber = this.handleDeleteNumber.bind(this);
     }
-    handleDeleteNumber() {
-        this.setState({inputDial: this.state.inputDial.split('').slice(0,-1).join('')})
-    }
 
+    /**
+     * Delete last number entered for the phone number
+     */
+    handleDeleteNumber() {
+        this.setState({
+            inputDial: this.state.inputDial
+                .split('')
+                .slice(0, -1)
+                .join(''),
+        });
+    }
+    /**
+     * Closes the info panel with total numbers of calls and top 3 numbers
+     */
     handleCloseModal() {
         this.setState({
             phoneCallFinished: false,
         });
     }
-
+    /**
+     * adds the current phone number dialed to the list of all calls when the call ended
+     */
     handleCounterDone() {
         this.setState({
             dialing: false,
@@ -40,7 +53,9 @@ class Dialer extends Component {
             phoneCallFinished: true,
         });
     }
-
+    /**
+     * Handles the dial button click event. If there's no number entered, the dial button doesn't do anything.
+     */
     handleEventDial() {
         if (this.state.inputDial === '') {
             return;
@@ -48,6 +63,10 @@ class Dialer extends Component {
         this.setState({ dialing: !this.state.dialing });
     }
 
+    /**
+     * Ads a number to the phone number when is pressed or when is press by keyboard
+     * @param {string} key
+     */
     handleInputDial(key) {
         this.setState(prevState => {
             return { inputDial: prevState.inputDial + key };

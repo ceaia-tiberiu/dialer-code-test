@@ -1,6 +1,11 @@
 import React from 'react';
 import Counter from './Counter';
+import propTypes from 'prop-types';
 
+/**
+ * Shows the phone number dialed
+ * @param {*} props
+ */
 const PhoneNumber = props => {
     return (
         <div className="phone-number">
@@ -23,6 +28,13 @@ const PhoneNumber = props => {
             ) : null}
         </div>
     );
+};
+
+PhoneNumber.propTypes = {
+    deleteNumber: propTypes.func.isRequired,
+    inputDial: propTypes.string.isRequired,
+    dialing: propTypes.bool.isRequired,
+    counterDone: propTypes.func.isRequired,
 };
 
 export default PhoneNumber;

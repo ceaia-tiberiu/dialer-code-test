@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 
+/**
+ * Shows the number pad that is used to call a phone number
+ * the numbers work from keyboard also too. except * and # (wokr in progress for that)
+ */
 class Numbers extends Component {
     constructor(props) {
         super(props);
@@ -7,6 +12,10 @@ class Numbers extends Component {
         this.handleMouseDownEvent = this.handleMouseDownEvent.bind(this);
     }
 
+    /**
+     * Check if the keypress is a number and adds it to the phone number.
+     * @param {object} event
+     */
     onKeyDown(event) {
         let key = event.keyCode;
         key = String.fromCharCode(key);
@@ -16,12 +25,19 @@ class Numbers extends Component {
         }
         return;
     }
-    onKeyUp(event) {}
+    /**
+     * Adds zpressed` event class to the specific number
+     * @param {object} event
+     */
     handleMouseDownEvent(event) {
         let key = event.currentTarget.innerHTML;
         event.currentTarget.classList.add('pressed');
         this.props.inputNr(key);
     }
+    /**
+     * Removes the `pressed` event class after 300 ms
+     * @param {object} event
+     */
     handleMouseUpEvent(event) {
         let element = event.currentTarget;
         setTimeout(function() {
@@ -125,5 +141,9 @@ class Numbers extends Component {
         );
     }
 }
+
+Numbers.propTypes = {
+    inputNr: propTypes.func.isRequired,
+};
 
 export default Numbers;
